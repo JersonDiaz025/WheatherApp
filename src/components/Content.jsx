@@ -1,20 +1,30 @@
 import React from 'react';
+import Loader from './Loader';
 
-const Content = (data) => {
-    const { name, country, localtime, icon, cloud } = data;
-    return (
-        <div className='w-100 flex justify-center mt-10'>
-            <div className='bg-zinc-300 rounded-2xl w-2/5 box-border h-96 flex justify-center'>
-                <div className='mt-10  flex-row w-100'>
-                    <h1 className='font-bold'>{name}</h1>
-                    <span className='font-bold flex flex-col text-3xl text-blue-900'>{cloud} °C</span>
-                    
-                    <img src={icon} alt='image whather' className='w-28 h-28'/>
-                </div>
-                <hr className='w-100 text-blue-900 leading-3'></hr>
+
+const Content = ({data}) => {
+    if (data) {
+      const { code, icon, text } = data.current.condition;
+      const { cloud, humidity, is_day, temp_c, temp_f, last_updated } =
+        data.current;
+      const { name, country, localtime } = data.location;
+
+      return (
+
+          <div className="content">
+            <div className="mt-10  flex-row w-100">
+              <h1 className="font-bold">{name}</h1>
+              <span className="font-bold flex flex-col text-3xl text-blue-900">
+                {temp_c} °C
+              </span>
+              <img src={icon} alt="image whather" className="w-28 h-28" />
             </div>
-        </div>
-    );
+            <hr className="w-100 text-blue-900 leading-3"></hr>
+          </div>
+      );
+    } else {
+      return <Loader />;
+  }
 }
 
 export default Content;

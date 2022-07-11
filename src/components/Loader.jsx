@@ -2,12 +2,16 @@ import React from 'react';
 
 const Loader = () => {
     return (
-        <div className='w-100 flex justify-center items-center'>
-            <div className='mt-48'>
-                <div className='loader '></div>
+        
+        <div className='modal'>
+            <div className='container_modal'>
+                <div className='loader'>
+                </div>
+                <h1 className='text'>Loading...</h1>
             </div>
-            
+         
         </div>
+       
 
     );
 }

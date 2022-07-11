@@ -7,6 +7,7 @@ import axios from 'axios';
  */
 export const getWeatherInfo = () => {
 
+
     /* Creating a state variable called data and a function called setData. */
     const [data, setData] = useState();
 
@@ -15,7 +16,7 @@ export const getWeatherInfo = () => {
         const options = {
           method: 'GET',
           url: 'https://weatherapi-com.p.rapidapi.com/current.json',
-          params: {q: 'Santo Domingo'},
+          params: {q: `${dataIn? dataIn.trim(): 'Santo Domingo'}`},
           headers: {
             'X-RapidAPI-Key': '579ae66bdbmshcfed995c98bdc49p1d3fb4jsn2d513f25d7a7',
             'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
