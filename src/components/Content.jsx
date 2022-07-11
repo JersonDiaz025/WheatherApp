@@ -12,9 +12,10 @@ const Content = ({data}) => {
       return (
 
           <div className="content">
-            <div className="mt-10  flex-row w-100">
-              <h1 className="font-bold">{name}</h1>
-              <span className="font-bold flex flex-col text-3xl text-blue-900">
+            <div className="sub_container">
+              <h1 className="font-bold text-2xl flex justify-start ">{name}</h1>
+              <hr></hr>
+              <span className="font-bold text-3xl text-blue-900">
                 {temp_c} °C
               </span>
               <img src={icon} alt="image whather" className="w-28 h-28" />
