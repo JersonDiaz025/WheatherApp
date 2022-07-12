@@ -1,6 +1,10 @@
-.body{
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+*{
+    font-family: 'Secular One', sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .modal{
@@ -39,8 +43,6 @@
     border-top: 5px solid #1fcc61;
     border-right: 5px solid transparent;
     border-radius: 50%;
-    animation: 1s spin linear infinite;
-    /* position: absolute; */
 }
 
 /* ---------------------------------------------------------------------------- */
@@ -91,24 +93,37 @@
 }
 
 .content{
-    min-width: 48%;
-    width: 100px;
-    height: 25%;
+    min-width: 40%;
+    width: auto;
+    height: auto;
     display: flex;
     justify-content: center;
-    align-items: center;
     box-shadow: 1px 1px 20px rgba(7, 7, 7, 0.589);
-    border-radius: 10px;
+    border-radius: 20px;
     position: absolute;
     top: 40%;
     left: auto;
     right: auto;
     bottom: auto;
+}
 
-}
-.sub_container{
+.footer{
+    box-shadow: 1px 1px 20px rgba(7, 7, 7, 0.589);
+    padding: 9px 9px;
     width: 100%;
+    margin: 0 auto;
+    border-radius: 10px;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
 }
+.span{
+    display: block;
+    margin-left: 20px;
+    margin-right: 20px  ;
+}
+
 .input{
     border-radius: 8px;
     width: 70%;

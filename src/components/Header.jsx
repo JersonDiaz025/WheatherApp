@@ -1,8 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Content from "./Content";
-import Loader from "./Loader";
-
 
 const Header = () => {
 
@@ -37,9 +35,8 @@ const Header = () => {
       }
 
     }
-
     useEffect(() => {
-        getWeatherInfo()
+      getWeatherInfo()
     }, [valueIn])
 
 
@@ -64,24 +61,24 @@ const Header = () => {
     };
 
     return (
-      <div className='container-form'>
-          <form
-            className="header"
-            onSubmit={handleSubmit}
-          >
-            <h2 className="font-sans font-bold">Write a region</h2>
-            <input
-              className="input"
-              // pattern="[a-z]*"
-              type="text"
-              placeholder="Write a region"
-              value={valueIn}
-              onChange={handleChange}
-            />
-            <div className='container-btn'>
-                <button type="submit" className='button font-bold'>Send</button>
-            </div>
-          </form>
+      <div className='container-form  bg-gradient-to-r from-indigo-100 to-[#a6d0e4] ...'>
+        <form
+          className="header"
+          onSubmit={handleSubmit}
+        >
+          <h2 className="font-sans font-bold text-xl">Check the weather in your city</h2>
+          <input
+            className="input"
+            // pattern="[a-z]*"
+            type="text"
+            placeholder="Write a region or country"
+            value={valueIn}
+            onChange={handleChange}
+          />
+          <div className='container-btn'>
+            <button type="submit" className='button font-bold transition duration-700 ease-in-out'>Send</button>
+          </div>
+        </form>
         <Content data={data} />
       </div>
     );
